@@ -1,0 +1,211 @@
+{
+	
+	"INTERFACE ... END_INTERFACE": {
+		"prefix": "int",
+		"body": [
+			"INTERFACE" ,
+			"\t$0",
+			"END_INTERFACE"
+		],
+		"description": "INTERFACE ... END_INTERFACE"
+		},
+
+	"PROGRAM ... END_PROGRAM": {
+		"prefix": "pro",
+		"body": [
+			"PROGRAM" ,
+			"\t$0",
+			"END_PROGRAM"
+		],
+		"description": "PROGRAM ... END_PROGRAM"
+		},
+
+		"IMPLEMENTATION ... END_IMPLEMENTATION": {
+		"prefix": "imp",
+		"body": [
+			"IMPLEMENTATION" ,
+			"\t$0",
+			"END_IMPLEMENTATION"
+		],
+		"description": "IMPLEMENTATION ... END_IMPLEMENTATION"
+		},
+
+		"FUNCTION ... END_FUNCTION": {
+		"prefix": "fun",
+		"body": [
+			"FUNCTION_BLOCK" ,
+			"\t$0",
+			"END_FUNCTION_BLOCK"
+		],
+		"description": "FUNCTION ... END_FUNCTION"
+		},
+
+		"FUNCTION_BLOCK ... END_FUNCTION_BLOCK": {
+		"prefix": "fun",
+		"body": [
+			"FUNCTION_BLOCK" ,
+			"\t$0",
+			"END_FUNCTION_BLOCK"
+		],
+		"description": "FUNCTION_BLOCK ... END_FUNCTION_BLOCK"
+		},
+
+
+
+
+
+// variables declaration
+
+		"VAR ... END_VAR": {
+		"prefix": "var",
+		"body": [
+			"VAR" ,
+			"\t$0 ${1:Variable} : ${2:Type}",
+			"END_VAR"
+		],
+		"description": "VAR ... END_VAR"
+		},
+
+
+		"VAR_GLOBAL ... END_VAR": {
+		"prefix": "var",
+		"body": [
+			"VAR_GLOBAL" ,
+			"\t$0 ${1:Variable} : ${2:Type}",
+			"END_VAR"
+		],
+		"description": "VAR_GLOBAL ... END_VAR"
+		},
+
+		"VAR_INPUT ... END_VAR": {
+		"prefix": "var",
+		"body": [
+			"VAR_INPUT" ,
+			"\t$0 ${1:Variable} : ${2:Type}",
+			"END_VAR"
+		],
+		"description": "VAR_INPUT ... END_VAR"
+		},
+
+		"VAR_OUTPUT ... END_VAR": {
+		"prefix": "var",
+		"body": [
+			"VAR_OUTPUT" ,
+			"\t$0 ${1:Variable} : ${2:Type}",
+			"END_VAR"
+		],
+		"description": "VAR_OUTPUT ... END_VAR"
+		},
+
+		"LABEL ... END_LABEL": {
+		"prefix": "lab",
+		"body": [
+			"LABEL" ,
+			"\t$0 ${1:Variable} : ${2:Type}",
+			"END_LABEL"
+		],
+		"description": "LABEL ... END_LABEL"
+		},
+
+// end var declare
+
+
+
+
+//conditions statements
+
+	"IF ...THEN ... END_IF": {
+		"prefix": "if,then,end_if",
+		"body": [
+			"IF ${1:Condition} THEN" ,
+			"\t$0",
+			"END_IF;"
+		],
+		"description": "IF ...THEN ... END_IF"
+		},
+
+
+	"IF ...ELSE": {
+		"prefix": "if,else,then,end_if",
+		"body": [
+			"IF ${1:Condition} THEN" ,
+			"\t$0",
+			"ELSE",
+			"\t$0",
+			"END_IF;"
+		],
+		"description": "IF ...ELSE"
+		},
+
+		"IF ...ELSIF": {
+		"prefix": "elsif",
+		"body": [
+			"IF ${1:Condition} THEN" ,
+			"\t$0",
+			"ELSIF",
+			"\t$0",
+			"END_IF;"
+		],
+		"description": "IF ... ELSIF"
+		},
+	"CASE ...ELSE ...END_CASE": {
+		"prefix": "case",
+		"body": [
+			"CASE ${1:Variable} OF ${2:Value}:" ,
+			"\t$0",
+			"ELSE",
+			"\t",
+			"END_CASE;"
+		],
+		"description": "CASE ...ELSE ...END_CASE;"
+		},
+
+//END CONDITION statements
+
+
+
+//LOOP statements
+	"WHILE ...DO ... END_WHILE": {
+		"prefix": "while",
+		"body": [
+			"WHILE ${1:Boolean}" ,
+			"\t$0",
+			"DO",
+			"\t$0",
+			"END_WHILE;"
+		],
+		"description": "WHILE ...DO ... END_WHILE"
+		},
+	
+	"REPEAT ...UNTIL ... END_REPEAT": {
+		"prefix": "repeat",
+		"body": [
+			"REPEAT" ,
+			"\t$0",
+			"UNTIL ${1:Condition}",
+			"\t$0",
+			"END_REPEAT;"
+		],
+		"description": "REPEAT ...UNTIL ... END_REPEAT"
+		},
+
+	"FOR ...DO ... END_FOR": {
+		"prefix": "for",
+		"body": [
+			"FOR ${1:Condition}" ,
+			"\t$0",
+			"TO ${2:value}",
+			"\t$0",
+			"BY ${3:value}",
+			"\t$0",
+			"DO",
+			"\t$0",
+			"END_FOR;"
+		],
+		"description": "FOR ...DO ... END_FOR"
+		}
+//end LOOP statements
+
+
+
+}
